@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Focus",
+  "description": "This extension will set time limit",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab",
+   "storage"
+   ]
+}
