@@ -1,5 +1,7 @@
+var a=window.location.toString();
+if(a==("https://www.facebook.com/"))
+{
+     chrome.runtime.sendMessage({redirect: "https://www.youtube.com/"});
+}
 
-alert(window.location.toString());
-chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': true}, function (tabs) {
-    alert(tabs[0].url);
-});
+
