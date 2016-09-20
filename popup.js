@@ -1,17 +1,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   var saveButton = document.getElementById('save');
+  var myArray=new Array();
   saveButton.addEventListener('click', function()
    {
-    var array = [];
     chrome.storage.sync.get('myArray', function(data) { 
       alert(data.myArray.length);
-      array=data.myArray;
+      myArray=data.myArray;
     });
   	var siteUrl = document.getElementById("siteurl").value;
-    array.push(siteUrl);
-  	chrome.storage.sync.set({'myArray':array}, function() {
-    alert(array);
+    myArray.push(siteUrl);
+  	chrome.storage.sync.set({'myArray':myArray}, function() {
+    alert(myArray);
   	});
   },false);
   var viewButton = document.getElementById('view');
