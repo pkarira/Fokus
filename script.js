@@ -1,7 +1,13 @@
 var a=window.location.toString();
-if(a==("https://www.facebook.com/"))
-{
-     chrome.runtime.sendMessage({redirect: "https://www.youtube.com/"});
-}
+chrome.storage.sync.get('myArray', function(data) {
+      for (var i=0;i<data.myArray.length;i++)
+      {
+      if(a==(data.myArray[i]))
+      {
+      chrome.runtime.sendMessage({redirect: "https://www.youtube.com/"});
+      break;
+      }
+     }
+     });
 
 

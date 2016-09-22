@@ -1,15 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   var saveButton = document.getElementById('save');
-  //var array=new Array();
   var siteUrl;
   saveButton.addEventListener('click', function()
    {
     chrome.storage.sync.get('myArray', function(data) { 
       alert(data.myArray.length);
       alert(data.myArray);
-     // array=data.myArray;
-     siteUrl = document.getElementById("siteurl").value;
+     siteUrl = (document.getElementById("siteurl").value).toString();
     (data.myArray).push(siteUrl);
     chrome.storage.sync.set({'myArray':data.myArray}, function(){
     });
