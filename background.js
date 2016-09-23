@@ -1,5 +1,5 @@
 
-chrome.runtime.onMessage.addListener(function(request, sender) {
+/*chrome.runtime.onMessage.addListener(function(request, sender) {
    chrome.tabs.update(sender.tab.id, {url: request.redirect});
 });
 chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
@@ -18,4 +18,5 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
 var tabToUrl = {};
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     tabToUrl[tabId] = tab.url;
-});
+});*/
+alert((new Date()).getDate());
