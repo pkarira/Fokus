@@ -149,5 +149,5 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 						}
 					}
 	             }
-		         System.out.println(year+" "+mon+" "+date+" "+hour+" "+min);
+		         return (parseInt(year,10)+" "+parseInt(mon,10)+" "+parseInt(date,10)+" "+parseInt(hour,10)+" "+parseInt(min,10)).toString();
 }

@@ -10,12 +10,12 @@
    "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["dateAndTime.js","background.js"]
   },
   "content_scripts":[
     {
     "matches": ["http://*/*","https://*/*"],
-    "js": ["script.js"]
+    "js": ["dateAndTime.js","script.js"]
     }
 
 ],
