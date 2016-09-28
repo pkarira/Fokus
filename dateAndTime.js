@@ -12,8 +12,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 				}else
 				{
 				    date=date+1;
-					hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-					min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+					hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+					min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 				}
 			}else
 			{
@@ -25,8 +25,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 				{
 					mon=mon+1;
 				    date=1;
-				    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-					min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+				    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+					min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 				}
 			}
 		}else
@@ -41,8 +41,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 					}else
 					{
 					    date=date+1;
-						hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-						min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+						hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+						min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 					}
 				}else
 				{
@@ -54,8 +54,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 					{
 						mon=mon+1;
 					    date=1;
-					    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-						min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+					    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+						min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 					}
 				}
 		   }else
@@ -72,8 +72,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 						}else
 						{
 						    date=date+1;
-							hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-							min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+							hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+							min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 						}
 					}else
 					{
@@ -85,8 +85,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 						{
 							mon=mon+1;
 						    date=1;
-						    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-							min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+						    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+							min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 						}
 					}
 			   }else
@@ -100,8 +100,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 						}else
 						{
 						    date=date+1;
-							hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-							min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+							hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+							min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 						}
 					}else
 					{
@@ -113,8 +113,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 						{
 							mon=mon+1;
 						    date=1;
-						    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-							min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+						    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+							min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 						}
 					}
 			   }
@@ -130,8 +130,8 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 						}else
 						{
 						    date=date+1;
-							hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-							min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+							hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+							min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 						}
 					}else
 					{
@@ -144,10 +144,11 @@ function dateAndTime(year,mon,date,hour,min,h1,m1)
 							year=year+1;
 							mon=1;
 						    date=1;
-						    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+min))/60,10);
-							min=((h1*60+m1)-((24-(hour1+1))*60+min))%60;
+						    hour=parseInt(((h1*60+m1)-((24-(hour+1))*60+(60-min)))/60,10);
+							min=((h1*60+m1)-((24-(hour1+1))*60+(60-min)))%60;
 						}
 					}
 	             }
-		         return (parseInt(year,10)+" "+parseInt(mon,10)+" "+parseInt(date,10)+" "+parseInt(hour,10)+" "+parseInt(min,10)).toString();
+		        return (parseInt(year,10)+" "+parseInt(mon,10)+" "+parseInt(date,10)+" "+parseInt(hour,10)+" "+parseInt(min,10)).toString()+" ";
+		          //return year+" "+mon+" "+" "+date+" "+" "+hour+" "+min+" ";
 }

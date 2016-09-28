@@ -4,7 +4,7 @@ var saveButton = document.getElementById('save');
   var siteUrl;
   var min;
   var hour;
-  Date d=new Date();
+  var d=new Date();
   saveButton.addEventListener('click', function()
    {
     chrome.storage.sync.get('myArray', function(data) { 
@@ -22,11 +22,6 @@ var saveButton = document.getElementById('save');
      list.push(1);
      list.push(1);
      list.push(1);
-    /* list.push(d.getFullYear().toString);
-     list.push(d.getMonth().toString);
-     list.push(d.getDate().toString);
-     list.push(d.getHours().toString);
-     list.push(d.getMinutes().toString);*/
     (data.myArray).push(list);
     chrome.storage.sync.set({'myArray':data.myArray}, function(){
     });
@@ -35,6 +30,7 @@ var saveButton = document.getElementById('save');
   },false);
   var viewButton = document.getElementById('view');
   viewButton.addEventListener('click', function() {
+    var d=new Date();
 chrome.storage.sync.get('myArray', function(data) { 
       var s="";
       for(var i=0;i<data.myArray.length;i++)
@@ -43,5 +39,33 @@ chrome.storage.sync.get('myArray', function(data) {
       }
       alert(s);
   	});
+  },false);
+   var removeAllButton = document.getElementById('removeAll');
+  removeAllButton.addEventListener('click', function() {
+chrome.storage.sync.get('myArray', function(data) {
+     data.myArray.length=0;
+      chrome.storage.sync.set({'myArray':data.myArray}, function(){
+        alert(data.myArray.length=0);
+    });  
+     });
+  },false);
+   var editButton = document.getElementById('change');
+  editButton.addEventListener('click', function() {
+   var siteUrl1= (document.getElementById("siteurl").value).toString();
+     var hour1= (document.getElementById("hour").value);
+     var min1= (document.getElementById("min").value);
+chrome.storage.sync.get('myArray', function(data) { 
+       for (var i=0;i<data.myArray.length;i++)
+      {
+      if(siteUrl1==(data.myArray[i])[0])
+      {
+         data.myArray[i][1]=(document.getElementById("hour").value);
+         data.myArray[i][2]=(document.getElementById("min").value);
+         break;
+      }
+     }
+     chrome.storage.sync.set({'myArray':data.myArray}, function(){
+    });
+    });
   },false);
 },false);
