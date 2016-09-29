@@ -10,7 +10,6 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
    chrome.tabs.update(sender.tab.id, {url: request.redirect});
 });
 chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
-    alert(tabToUrl[tabId].toString()+" ");
     chrome.storage.sync.get('myArray', function(data) {
       for (var i=0;i<data.myArray.length;i++)
       {
@@ -19,9 +18,7 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
          var d=new Date();
          var s="";
         var c=3;
-        alert(d.getFullYear()+" "+ d.getMonth()+" "+ d.getDate()+" "+d.getHours()+" "+d.getMinutes()+" "+(data.myArray[i])[1]+" "+(data.myArray[i])[2]);
         var nDate=dateAndTime(d.getFullYear(), d.getMonth(),d.getDate(),d.getHours(),d.getMinutes(),parseInt((data.myArray[i])[1],10),parseInt((data.myArray[i])[2],10));
-        alert(nDate);
         for(var j=0;j<nDate.length;j++)
         {
           if(nDate.charAt(j)!=" ")
@@ -34,11 +31,10 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
             s="";
           }
         }
-        alert((data.myArray[i])[3]+" "+(data.myArray[i])[4]+" "+(data.myArray[i])[5]+" "+(data.myArray[i])[6]+" "+(data.myArray[i])[7]);
           chrome.storage.sync.set({'myArray':data.myArray}, function(){
     });
-     alert(tabToUrl[tabId]+" ");
       break;
+      alert("Oops! Now You Will Not Be Able To Open " +tabToUrl[tabId].toString()+" for next "+(parseInt((data.myArray[i])[1],10)*60+parseInt((data.myArray[i])[2],10))+" minutes");
       }
      }
      });

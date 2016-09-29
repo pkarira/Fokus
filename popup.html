@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html style="border-style: solid ; border-color: #CB2008 ; border-width: 5px ; border-bottom: 50px";>
 <head> 
 <script type="text/javascript" src="dateAndTime.js"></script> 
 <script type="text/javascript" src="popup.js"></script> 
+<style>
+body {background-color: #000000;
+     min-width:300px;
+     min-height:150px;
+    
+  }
+button {
+background-color: #CB2008;
+border-radius: 15px 50px;
+color: white;
+border: 1px #CB2008;} 
+form{
+	color:#ffffff;
+}    
+</style>
 </head>
-<body>
+<body id="body">
 <form>
   Site name:<br>
-  <input type="text" name="siteurl" id="siteurl"><br>
-  Hour:<br>
-  <input type="text" name="hour" id="hour"><br>
-  Minute:<br>
-  <input type="text" name="min" id="min"><br>
-  </form>
-	<button type="button" id="save">Save</button>
-	<button type="button" id="view">View saved</button>
-	<button type="button" id="removeAll">Clear All</button>
-	<button type="button" id="change">Change</button>
-	<input type="text" placeholder="Select hours" class="hours" list="hours"/>
-    <datalist id="hours">
+  <input type="text" name="siteurl" id="siteurl"><br><br><br>
+  Hour:
+  <select id="hours">
      <option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -43,9 +49,12 @@
 	<option value="21">21</option>
 	<option value="22">22</option>
 	<option value="23">23</option>
-</datalist>
-<input type="text" placeholder="Select minutes" class="minutes" list="minutes"/>
-    <datalist id="minutes">
+</select id="minutes"> &nbsp; &nbsp; &nbsp;
+
+ <!-- <input type="text" name="hour" id="hour"><br>-->
+  Minutes:
+ <!-- <input type="text" name="min" id="min"><br>-->
+ <select id="minutes">
     <option value="0">0</option>
     <option value="5">5</option>
     <option value="10">10</option>
@@ -59,5 +68,51 @@
 	<option value="50">50</option>
 	<option value="55">55</option>
 	<option value="60">60</option>
-</datalist>
+</select>
+  </form><br><br>
+	<button type="button" id="save">Save</button>&nbsp; &nbsp;
+	<button type="button" id="view">View saved</button>&nbsp; &nbsp;
+	<button type="button" id="removeAll">Clear All</button>&nbsp; &nbsp;
+	<button type="button" id="change">Change</button>
+<!--	<select id="hours">
+     <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+</select id="minutes">
+    <select>
+    <option value="0">0</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+	<option value="15">15</option>
+	<option value="20">20</option>
+	<option value="25">25</option>
+	<option value="30">30</option>
+	<option value="35">35</option>
+	<option value="40">40</option>
+	<option value="45">45</option>
+	<option value="50">50</option>
+	<option value="55">55</option>
+	<option value="60">60</option>
+</select>-->
 </body>
