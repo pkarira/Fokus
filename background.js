@@ -33,8 +33,8 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
         }
           chrome.storage.sync.set({'myArray':data.myArray}, function(){
     });
+      alert("Oops! Now You Will Not Be Able To Open " +tabToUrl[tabId].toString()+" for next "+((parseInt((data.myArray[i])[1],10)*60)+(parseInt((data.myArray[i])[2],10))).toString()+" minutes");
       break;
-      alert("Oops! Now You Will Not Be Able To Open " +tabToUrl[tabId].toString()+" for next "+(parseInt((data.myArray[i])[1],10)*60+parseInt((data.myArray[i])[2],10))+" minutes");
       }
      }
      });

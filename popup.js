@@ -39,9 +39,10 @@ chrome.storage.sync.get('myArray', function(data) {
       var s="";
       for(var i=0;i<data.myArray.length;i++)
       {
-            s+=data.myArray[i]+"          ";
+            s+="<br>"+data.myArray[i][0]+"&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;"+((parseInt((data.myArray[i])[1],10)*60)+(parseInt((data.myArray[i])[2],10))).toString()+" min"+"<br>";
       }
-      alert(s);
+      document.getElementById("list").innerHTML=s;
+      
   	});
   },false);
    var removeAllButton = document.getElementById('removeAll');

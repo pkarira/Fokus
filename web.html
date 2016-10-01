@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript" src="web.js"></script> 
+<script type="text/javascript" src="script.js"></script>
 <style>
-h2 {
-    text-align: justify;
-    padding-top: 30px;
-    padding-left: 180px;
-    padding-right: 180px;
-    padding-bottom: 30px;
-    background: #089CCB;
-    margin-top: 30px;
-}
-img
-{
-	margin-top: 10px;
-	margin-left: 600px;
-	
-}
-h3 span
-{
-padding-top: 10px;
-padding-bottom:10px;
-background: #089CCB;
-padding-left: 10px;
-padding-right: 10px;
-}
-h3
-{
-padding-top: 40px;
-text-align: center;
-}
+	body {
+		background: url(bg.jpg);
+	}
+	h2 {    
+		
+	}
+	img
+	{
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		width:100px;
+		height:100px;
+
+	}
+	#warning
+	{
+		padding-top: 50px;
+		padding-bottom:10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: center;
+		font-size: 35px;
+		color: white;
+	}
+	#quote {
+		color: white;
+		text-align: center;
+		margin-top: 150px;
+		margin-left: 180px;
+		margin-right: 180px;
+		font-size: 30px;
+		line-height: 40px;
+		font-family: -webkit-pictograph;
+		letter-spacing: 4px;
+		font-variant: small-caps;
+	}
+	#quote::selection {
+		background: #eee;
+	}
+	#madeby
+	{
+color:white;
+	}
 </style>
-<body >
-    <h3><span><font size="5" color="#EDF845">Sorry This Url Cannot Be Opened , There Is Still Some Time Left</font></span></h3>
-    <img src="no.gif"  style="width:100px;height:100px;">
-    <h2 ><span ><font size="6" color="#EDF845" id="quote"></font></span></h2>
+"stylesheet"> <body >
+	<div id="warning">Sorry this url cannot be opened, there are still <span id="war"></span> minutes left</div>
+	<img src="no5.gif">
+	<div id="quote"></div>
+	<div id="madeby" style="position: absolute; bottom: 5px;">Made By:-Mobile Development Group , IIT Roorkee</div>
+
 </body>
-  </html>
+</html>
