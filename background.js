@@ -6,14 +6,24 @@
         alert(data.myArray.length=0);
     });  
      });*/
-chrome.runtime.onMessage.addListener(function(request, sender) {
+     
+chrome.runtime.onMessage.addListener(function(request, sender,sendResponse) {
+  if (request.greeting == "hello")
+      {
+        var url = new URL(sender.tab.url);
+        var domain = url.hostname;
+        sendResponse({farewell: (domain+"")});
+      }
+    else
    chrome.tabs.update(sender.tab.id, {url: request.redirect});
 });
 chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
     chrome.storage.sync.get('myArray', function(data) {
       for (var i=0;i<data.myArray.length;i++)
       {
-      if(tabToUrl[tabId].toString()==data.myArray[i][0])
+        var url = new URL(tabToUrl[tabId]);
+        var domain = url.hostname;
+      if(domain.toString()==data.myArray[i][0])
       {
          var d=new Date();
          var s="";

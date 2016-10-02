@@ -4,6 +4,7 @@
   "name": "Focus",
   "description": "This extension will set time limit",
   "version": "1.0",
+  "options_page": "options.html",
 
   "browser_action": {
    "default_icon": "icon.png",
@@ -20,8 +21,8 @@
 
 ],
   "permissions": [
+    "tabs",
    "activeTab",
-   "storage",
-   "tabs"
+   "storage"
    ]
 }
