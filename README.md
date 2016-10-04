@@ -13,6 +13,6 @@ and once you close your tab then you will not be able to open it for saved time 
 
 <h3>Intructions</h3>
 
-
+<!--![gif](https://github.com/pkarira/Focus/blob/master/screenshots/giphy.gif?raw=true)-->
 
 
