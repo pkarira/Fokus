@@ -5,32 +5,46 @@
 	<script type="text/javascript" src="popup.js"></script> 
 	<style>
 		body {
-			background-color: #000000;
+			background: url(bg1.jpg);
+		/*	background-color: #000000;*/
 			min-width: 300px;
 			min-height: 150px;
 			border-style: solid;
-			border-color: #CB2008;
+			/*border-color: #ffffff;*/
 			border-width: 5px;
 			padding: 10px;
 			margin: 0px;
 		}
 		button {
-			background-color: #CB2008;
-			border-radius: 15px 50px;
-			color: white;
-			border: 1px #CB2008;} 
+			background-color: #ffffff;
+			border-radius: 20px 50px;
+			color: black;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			padding-left: 10px;
+			padding-right: 10px; 
+			margin-left: 60px;
+			border: 1px #CB2008;
+		} 
 			form{
 				color:#ffffff;
 			}    
 			p{
 				color: white;
 			}
+			#add
+			{
+            padding-left: 10px;
+			padding-right: 10px;
+			margin-left: 15px;
+			}
 		</style>
 	</head>
 	<body id="body">
 		<form>
 			Site name:<br>
-			<input type="text" name="siteurl" id="siteurl"><br><br><br>
+			<input type="text" name="siteurl" id="siteurl">
+			<button type="button" id="add">Add This Page</button><br><br><br>
 			Hour:
 			<select id="hours">
 				<option value="0">0</option>
@@ -79,10 +93,10 @@
 			</select>
 		</form><br><br>
 		<button type="button" id="save">Save</button>&nbsp; &nbsp;
-		<button type="button" id="view">View</button>&nbsp; &nbsp;
+		<!-- <button type="button" id="view">View</button>&nbsp; &nbsp;
 		<button type="button" id="removeAll">Delete</button>&nbsp; &nbsp;
-		<button type="button" id="change">Change</button>&nbsp; &nbsp;
+		<button type="button" id="change">Change</button>&nbsp; &nbsp; -->
 		<button type="button" id="option">Options</button>
-<p id="list"><br></p>
+<p id="list"></p>
 </body>
 </html>

@@ -2,7 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	var list1=[];
 	document.getElementById("quote").innerHTML = store();
 	chrome.storage.sync.get('diff', function(data) {
-    document.getElementById("war").innerHTML = data.diff;
+		var timeLeft = data.diff;
+		document.getElementById("war").innerHTML = timeLeft--;
+		window.setInterval(function() {
+			if(timeLeft >= 0) {
+				document.getElementById("war").innerHTML = timeLeft--;
+			}
+
+		}, 60000);
 
 	});
 	function getRandomInt(min, max) {

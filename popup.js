@@ -40,21 +40,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   },false);
-  var viewButton = document.getElementById('view');
-  viewButton.addEventListener('click', function() {
-    var d=new Date();
-    chrome.storage.sync.get('myArray', function(data) { 
-      var s="";
-      for(var i=0;i<data.myArray.length;i++)
-      {
-        s+="<br>"+data.myArray[i][0]+"&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;"+((parseInt((data.myArray[i])[1],10)*60)+(parseInt((data.myArray[i])[2],10))).toString()+" min"+"<br>";
-      }
-      document.getElementById("list").innerHTML=s;
+  var add=document.getElementById("add");
+  add.addEventListener("click",function () {
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    (document.getElementById("siteurl")).setAttribute("value",url+"");
+});
+  });
+  // var viewButton = document.getElementById('view');
+  // viewButton.addEventListener('click', function() {
+  //   var d=new Date();
+  //   chrome.storage.sync.get('myArray', function(data) { 
+  //     var s="";
+  //     for(var i=0;i<data.myArray.length;i++)
+  //     {
+  //       s+="<br>"+data.myArray[i][0]+"&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;"+((parseInt((data.myArray[i])[1],10)*60)+(parseInt((data.myArray[i])[2],10))).toString()+" min"+"<br>";
+  //     }
+  //     document.getElementById("list").innerHTML=s;
       
-    });
-  },false);
-  var removeAllButton = document.getElementById('removeAll');
-  removeAllButton.addEventListener('click', function() {
+  //   });
+  // },false);
+  // var removeAllButton = document.getElementById('removeAll');
+  // removeAllButton.addEventListener('click', function() {
    /* var spinner=document.getElementById("list");
     var array = [];
     var selectList = document.createElement("select");
@@ -78,28 +85,28 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.appendChild(t);
     btn.id="ok";
     spinner.appendChild(btn);*/
-    chrome.storage.sync.get('myArray', function(data) {
-     data.myArray.length=0;
-     chrome.storage.sync.set({'myArray':data.myArray}, function(){
-     });  
-   });
-  },false);
-  var editButton = document.getElementById('change');
-  editButton.addEventListener('click', function() {
-    var spinner=document.getElementById("list");
-    var array = [];
-    var selectList = document.createElement("select");
-    selectList.id = "mySelect";
-    spinner.appendChild(selectList);
-    chrome.storage.sync.get('myArray', function(data) {
-      for(var i=0;i<data.myArray.length;i++)
-      {
-        var option = document.createElement("option");
-        option.value = data.myArray[i][0];
-        option.text = data.myArray[i][0];
-        selectList.appendChild(option);
-      }
-    });
+  //   chrome.storage.sync.get('myArray', function(data) {
+  //    data.myArray.length=0;
+  //    chrome.storage.sync.set({'myArray':data.myArray}, function(){
+  //    });  
+  //  });
+  // },false);
+  // var editButton = document.getElementById('change');
+  // editButton.addEventListener('click', function() {
+  //   var spinner=document.getElementById("list");
+  //   var array = [];
+  //   var selectList = document.createElement("select");
+  //   selectList.id = "mySelect";
+  //   spinner.appendChild(selectList);
+  //   chrome.storage.sync.get('myArray', function(data) {
+  //     for(var i=0;i<data.myArray.length;i++)
+  //     {
+  //       var option = document.createElement("option");
+  //       option.value = data.myArray[i][0];
+  //       option.text = data.myArray[i][0];
+  //       selectList.appendChild(option);
+  //     }
+  //   });
     
     /*var siteUrl1= (document.getElementById("siteurl").value).toString();
      var hour1= (document.getElementById("hour").value);
@@ -117,5 +124,5 @@ chrome.storage.sync.get('myArray', function(data) {
      chrome.storage.sync.set({'myArray':data.myArray}, function(){
     });
   });*/
-},false);
+// },false);
 },false);
