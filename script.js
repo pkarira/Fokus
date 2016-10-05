@@ -17,8 +17,12 @@ chrome.storage.sync.get('myArray', function(data) {
         	if(dateTwo!=dateThree)
         	{
             chrome.runtime.sendMessage({redirect: "web.html"});
-            diff = Math.round((((dateTwo-dateOne)% 86400000) % 3600000) / 60000);
-             chrome.storage.sync.set({'diff':diff}, function(){
+            // 
+            var difference = dateTwo.getTime() - dateOne.getTime(); // This will give difference in milliseconds
+            var resultInMinutes = Math.round(difference / 60000);
+            // alert(resultInMinutes);
+            chrome.storage.sync.set({'diff':resultInMinutes}, function(){
+             
               });
             }
         break;

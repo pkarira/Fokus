@@ -17,34 +17,40 @@
     for(var i=0;i<data.myArray.length;i++)
     {
       var row = document.createElement("tr");
+      row.id=i;
       var td1 = document.createElement("td");
       var td2 = document.createElement("td");
       var td3=document.createElement("td");
-     var del = document.createElement("BUTTON");
+      var del = document.createElement("BUTTON");
       var t = document.createTextNode("Delete");       // Create a text node
       del.appendChild(t);
-       var i2=i;
-      del.addEventListener("click",function(){
+      del.id=i;
+      var i2=i;
+     // alert(i2);
+      del.addEventListener("click",function(e){
         chrome.storage.sync.get('myArray', function(data) { 
-             data.myArray.splice(i2, 1);
-             table.deleteRow(i2+1);
-         chrome.storage.sync.set({'myArray':data.myArray}, function(){
-         });
-       });  
+          data.myArray.splice(e.target.id, 1);
+          alert(e.target.id);
+          var row1 = document.getElementById(e.target.id);
+          row1.parentNode.removeChild(row1);
+          // table.deleteRow(e.target.id+1);
+          chrome.storage.sync.set({'myArray':data.myArray}, function(){
+          });
+        });  
       });
       var edit = document.createElement("BUTTON");
       var t1= document.createTextNode("Edit");       // Create a text node
       edit.appendChild(t1);
-     
-      edit.addEventListener("click",function()
+      edit.id=i;
+      edit.addEventListener("click",function(e)
       {
-        console.log(i2);
+        alert(e.target.id);
         var edit1=document.getElementById("edit1");
         edit1.className="overlay";
         var edit2=document.getElementById("edit2");
         edit2.className="show";
         var input=document.getElementById("siteurl");
-        input.setAttribute("value",data.myArray[i2][0]+"");
+        input.setAttribute("value",data.myArray[e.target.id][0]+"");
         var ok=document.getElementById("ok");
         ok.addEventListener("click",function()
         {
@@ -67,12 +73,12 @@
           edit1.className="";
           edit2.className="";
         });
-         var cancel=document.getElementById("cancel");
-         cancel.addEventListener("click",function()
-         {
-           edit1.className="";
-          edit2.className="";
-         });
+        var cancel=document.getElementById("cancel");
+        cancel.addEventListener("click",function()
+        {
+         edit1.className="";
+         edit2.className="";
+       });
 
       });
       td1.innerHTML = data.myArray[i][0];
