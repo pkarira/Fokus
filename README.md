@@ -11,7 +11,7 @@ As mentioned above this extenson allows you set interval of closing and opening 
 indefinitely or allows you set time limit to your usage in a day but this is not a case with this extension , you can spend as much time on website as you want
 and once you close your tab then you will not be able to open it for saved time interval .
 
-<h3>How To Use</h3>
+<h3>Usage</h3>
 <b>In the pop box either copy paste the url or go on the which you want to add and click Add This Page button .</b><br><br>
 <img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(45).png" width="600"><br><br>
 <b>Then select time interval of closing and opening and click on save button .</b><br><br>
