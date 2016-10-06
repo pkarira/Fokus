@@ -14,17 +14,44 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   saveButton.addEventListener('click', function()
   {
+
     var e1 = document.getElementById("hours");
     var hour = e1.options[e1.selectedIndex].text;
     var e2 = document.getElementById("minutes");
     var min = e2.options[e2.selectedIndex].text;
-    chrome.storage.sync.get('myArray', function(data) { 
+
+    chrome.storage.sync.get('myArray', function(data) {
+      if (typeof data.myArray === "undefined") {
+        var a=[];
+         var list=[];
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+        a.push(list);
+        chrome.storage.sync.set({'myArray':a}, function(){
+          alert("chrome.storage is now initialized , please click save again");
+    });
+     }
      if((ValidURL(document.getElementById("siteurl").value.toString()))==true)
       {
       var url = new URL(document.getElementById("siteurl").value);
       var domain = url.hostname;
       siteUrl = domain.toString();
       var b=true;
+      for (var i=0;i<data.myArray.length;i++)
+      {
+      if((data.myArray[i])[0]==="")
+      {
+        data.myArray.splice(i,1);
+         chrome.storage.sync.set({'myArray':data.myArray}, function(){
+    });
+      }
+     }
       for (var i=0;i<data.myArray.length;i++)
       {
       if(siteUrl==(data.myArray[i])[0])
@@ -36,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
 if(b==true){
 
     alert("saved "+domain);
-    /* hour = (document.getElementById("hour").value);
-    min = (document.getElementById("min").value);*/
     var list=[];
     list.push(siteUrl);
     list.push(hour);
@@ -68,6 +93,26 @@ else
     var url = tabs[0].url;
     (document.getElementById("siteurl")).setAttribute("value",url+"");
 });
+
+
+
+chrome.storage.sync.get('myArray', function(data) {
+      if (typeof data.myArray === "undefined") {
+        var a=[];
+         var list=[];
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+        a.push(list);
+        chrome.storage.sync.set({'myArray':a}, function(){
+          
+    });
+}});
   });
  
 },false);

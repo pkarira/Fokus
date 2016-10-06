@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		list1.push("You're not that lucky and I'm not that desperate!");
 		list1.push("Depression is merely anger without enthusiasm.");
 		var d;
-		d=list1[getRandomInt(0,list1.length)];
+		d=list1[getRandomInt(0,list1.length-1)];
 		return d;
 	}
 },false);
