@@ -14,7 +14,7 @@ chrome.storage.sync.get('myArray', function(data) {
         var dateThree= new Date(2020,1,1,1,1,0);
         if(dateOne<dateTwo)
         {
-        	if(dateTwo!=dateThree)
+        	if(dateTwo.getTime()!=dateThree.getTime())
         	{
             chrome.runtime.sendMessage({redirect: "web.html"});
             // 
