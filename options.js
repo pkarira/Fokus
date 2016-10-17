@@ -13,24 +13,36 @@
       var td2 = document.createElement("td");
       var td3=document.createElement("td");
       var del = document.createElement("BUTTON");
-      del.style.background="url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444)";
+      // del.style.background="url  http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444)";
+      del.style.background="#37474F";
       var t = document.createTextNode("Delete");       // Create a text node
       del.appendChild(t);
+      var css = 'button del:hover{ background-color: #ffffff }';
+      style = document.createElement('style');
+      del.appendChild(style);
+      if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+      } else {
+        style.appendChild(document.createTextNode(css));
+      }
       del.id=i;
       var i2=i;
      // alert(i2);
-      del.addEventListener("click",function(e){
-        chrome.storage.sync.get('myArray', function(data) { 
-          data.myArray.splice(e.target.id, 1);
-          var row1 = document.getElementById(e.target.id);
-          row1.parentNode.removeChild(row1);
+     del.addEventListener("click",function(e){
+      chrome.storage.sync.get('myArray', function(data) { 
+        data.myArray.splice(e.target.id, 1);
+        var row1 = document.getElementById(e.target.id);
+        row1.parentNode.removeChild(row1);
           // table.deleteRow(e.target.id+1);
           chrome.storage.sync.set({'myArray':data.myArray}, function(){
           });
         });  
-      });
-      var edit = document.createElement("BUTTON");
-      edit.style.background="url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444)";
+    });
+     var edit = document.createElement("BUTTON");
+     edit.style.padding="8px 20px 8px 20px";
+     edit.style.marginLeft="20px";
+      // edit.style.background="url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444)";
+      edit.style.background="#37474F";
       var t1= document.createTextNode("Edit");       // Create a text node
       edit.appendChild(t1);
       edit.id=i;

@@ -3,100 +3,145 @@
 <head> 
 	<script type="text/javascript" src="dateAndTime.js"></script> 
 	<script type="text/javascript" src="popup.js"></script> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Taviraj" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<style>
 		body {
-			background: url(bg1.jpg);
-		/*	background-color: #000000;*/
-			min-width: 315px;
+			/*background: url(bg1.jpg);*/
+			background-color: #E0E0E0;
+			min-width: 290px;
 			min-height: 150px;
 			border-style: solid;
-			/*border-color: #ffffff;*/
-			border-width: 5px;
-			padding: 10px;
+			border-color: #37474F;
+			border-width: 3px;
 			margin: 0px;
+			font-family: 'Roboto|Taviraj', serif;
 		}
-		button {
-			background-color: #ffffff;
-			border-radius: 20px 50px;
-			color: black;
-			padding-bottom: 5px;
-			padding-top: 5px;
+		p{
+			color: #37474F;
 			padding-left: 10px;
-			padding-right: 10px; 
-			margin-left: 60px;
-			border: 1px #CB2008;
-		} 
-			form{
-				color:#ffffff;
-			}    
-			p{
-				color: white;
-			}
-			#add
-			{
-            padding-left: 10px;
+			text-decoration: bold;
+		}
+		#add
+		{
+			padding-left: 10px;
 			padding-right: 10px;
 			margin-left: 15px;
-			}
-		</style>
-	</head>
-	<body id="body">
-		<form>
-			<b>Site name:</b><br>
-			<input type="text" name="siteurl" id="siteurl">
-			<button type="button" id="add"><b>Add This Page</b></button><br><br><br>
-			<b>Hours:</b>
-			<select id="hours">
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
-				<option value="17">17</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-			</select id="minutes"> &nbsp; &nbsp; &nbsp;
 
-			<!-- <input type="text" name="hour" id="hour"><br>-->
-			<b>Minutes:</b>
-			<!-- <input type="text" name="min" id="min"><br>-->
-			<select id="minutes">
-				<option value="0">0</option>
-				<option value="5">5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="25">25</option>
-				<option value="30">30</option>
-				<option value="35">35</option>
-				<option value="40">40</option>
-				<option value="45">45</option>
-				<option value="50">50</option>
-				<option value="55">55</option>
-				<option value="60">60</option>
-			</select>
-		</form><br><br>
-		<button type="button" id="save"><b>Save</b></button>&nbsp; &nbsp;
-		<!-- <button type="button" id="view">View</button>&nbsp; &nbsp;
-		<button type="button" id="removeAll">Delete</button>&nbsp; &nbsp;
-		<button type="button" id="change">Change</button>&nbsp; &nbsp; -->
+		}
+		#focus
+		{
+			font-family: 'Roboto|Taviraj', serif;
+			width: 290px;
+			height: 40px;
+			background-color: #37474F;
+			outline: none;
+			color: white;
+			border: 1px #CB2008;
+			font-size: 20px;
+		}
+		#save
+		{
+			background-color:  #37474F;
+			color: white;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			padding-left: 20px;
+			padding-right: 20px; 
+			margin-left: 50px;
+			border: 1px #CB2008;
+			box-shadow: 4px 4px 3px #9E9E9E;
+			font-family: 'Open+Sans', serif;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+		}
+		#save:hover
+		{
+			background-color: #546E7A;
+		}
+		#option
+		{
+			background-color:  #37474F;
+			color: white;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			padding-right: 10px; 
+			margin-left: 10px;
+			border: 1px #CB2008;
+			box-shadow: 3px 3px 5px #9E9E9E;
+			font-family: 'Open+Sans', serif;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+		}
+		#option:hover
+		{
+			background-color: #546E7A;
+		}
+		b
+		{
+			padding: 10px;
+		}
+	</style>
+</head>
+<body id="body">
+	<button id="focus">
+		FOCUS
+	</button><br><br>
+	<form>
+		<b>URL:</b>
+		<input type="text" name="siteurl" size="27" id="siteurl"><br><br>
+		<!-- <button type="button" id="add"><b>Add This Page</b></button><br><br><br> -->
+		<b>Hours:</b>
+		<select id="hours">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+		</select id="minutes"> &nbsp; &nbsp; &nbsp;
+
+		<!-- <input type="text" name="hour" id="hour"><br>-->
+		<b>Minutes:</b>
+		<!-- <input type="text" name="min" id="min"><br>-->
+		<select id="minutes">
+			<option value="0">0</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="35">35</option>
+			<option value="40">40</option>
+			<option value="45">45</option>
+			<option value="50">50</option>
+			<option value="55">55</option>
+			<option value="60">60</option>
+		</select>
+	</form><br><br>
+	<button type="button" id="save"><b>Save</b></button>&nbsp; &nbsp;
 		<button type="button" id="option"><b>Options</b></button>
-<p id="list"></p>
-</body>
-</html>
+		<p id="list"></p>
+	</body>
+	</html>

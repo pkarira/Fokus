@@ -24,9 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		list1.push("You must give everything to make your life as beautiful as the dreams that dance in your imagination.");
 		list1.push("Until you value yourself, you won't value your time. Until you value your time, you will not do anything with it.");
 		list1.push("Life is uncertain don't waste your time on such things that don't deserve your time and efforts instead do things you love and live your life to fullest.");
-		list1.push("I don't believe in plastic surgery, But in your case, Go ahead.");
-		list1.push("You're not that lucky and I'm not that desperate!");
-		list1.push("Depression is merely anger without enthusiasm.");
+		list1.push("The bad news is time flies. The good news is you're the pilot.");
+		list1.push("Time is the most valuable coin in your life. You and you alone will determine how that coin will be spent. Be careful that you do not let other people spend it for you.");
+		list1.push("Time is priceless; you are responsible for your time. Earn it or kill it, your choice");
+		list1.push("If you don't steal time, time will loot you.");
+		list1.push("Hard work is often the easy work you did not do at the proper time.");
+		list1.push("Time is not money because it never returns.");
 		var d;
 		d=list1[getRandomInt(0,list1.length-1)];
 		return d;

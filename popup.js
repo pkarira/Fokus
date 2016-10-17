@@ -7,6 +7,30 @@ document.addEventListener('DOMContentLoaded', function() {
   var hour;
   var d=new Date();
   var optionB=document.getElementById('option');
+  chrome.storage.sync.get('myArray', function(data) {
+      if (typeof data.myArray === "undefined") {
+        var a=[];
+         var list=[];
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+         list.push("");
+        a.push(list);
+        chrome.storage.sync.set({'myArray':a}, function(){
+          
+    });
+}});
+  var element2 = document.getElementById('minutes');
+        element2.value = 30;
+   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url =tabs[0].url;
+    (document.getElementById("siteurl")).setAttribute("value",url+"");
+});
+
   optionB.addEventListener('click',function()
   {
     chrome.tabs.create({ url: "options.html" });
@@ -61,8 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
      }
 if(b==true){
-
-    alert("saved "+domain);
+    document.getElementById("list").innerHTML=("saved   "+domain);
     var list=[];
     list.push(siteUrl);
     list.push(hour);
@@ -77,7 +100,7 @@ if(b==true){
     });
   }
   else
-    alert("alredy saved");
+    alert("already saved , please enter another url");
 }
 else
 {
@@ -87,10 +110,10 @@ else
   });
 
   },false);
-  var add=document.getElementById("add");
+  /*var add=document.getElementById("add");
   add.addEventListener("click",function () {
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-    var url = tabs[0].url;
+    var url =tabs[0].url;
     (document.getElementById("siteurl")).setAttribute("value",url+"");
 });
 
@@ -113,11 +136,12 @@ chrome.storage.sync.get('myArray', function(data) {
           
     });
 }});
-  });
+  });*/
  
 },false);
 function ValidURL(str) {
   var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  // var regex=/^((?:(?:(?:\w[\.\-\+]?)*)\w)+)((?:(?:(?:\w[\.\-\+]?){0,62})\w)+)\.(\w{2,6})$/;
   if(!regex .test(str)) {
   return false;
   } else {

@@ -2,15 +2,23 @@
 <!DOCTYPE html>
 <html >
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Taviraj" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<style>
 		button {
 			padding: 8px 16px;
-			margin-left: 20px;
-/*			background: url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);*/
+			/*margin-left: 20px;*/
+			/*background: url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);*/
 			color: #fff;
 			font-weight: bold;
-			text-shadow: 0 1px 0 #000;	
-			border-radius: 20px 50px;
+			border: 1px #CB2008;
+			box-shadow: 4px 4px 3px #9E9E9E;
+			font-family: 'Open+Sans', serif;
+			/*text-shadow: 0 1px 0 #000;*/	
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			
 		} 
 		.overlay{
 			position: absolute;
@@ -26,15 +34,11 @@
 		{
 
 			z-index: 1000;
-			background: url(bg1.jpg);
+			background: #E0E0E0;
 			display: none;
-
-			padding-top: 15px;
-			padding-left: 20px;
-			padding-right: 20px;
 			margin-top: 200px;
 			border-style: solid;
-			border-color: #ffffff;
+			border-color: #37474F;
 			border-width: 3px;
 			padding-bottom: 15px;
 		}
@@ -46,23 +50,28 @@
 		#ok
 		{
 
-			background-color: #ffffff;
-			border-radius: 20px 50px;
-			color: black;
+			background-color: #37474F;
+			color: white;
 			padding-bottom: 5px;
 			padding-top: 5px;
 			padding-left: 20px;
 			padding-right: 20px; 
 			margin-left: 10px;
 			border: 1px #CB2008;
-
+		}
+		#ok:hover
+		{
+			background-color: #546E7A;
+		}
+		#cancel:hover
+		{
+			background-color: #546E7A;
 		}
 		#cancel
 		{
 
-			background-color: #ffffff;
-			border-radius: 20px 50px;
-			color: black;
+			background-color: #37474F;
+			color: white;
 			padding-bottom: 5px;
 			padding-top: 5px;
 			padding-left: 10px;
@@ -71,7 +80,8 @@
 			border: 1px #CB2008;
 		}
 		form{
-			color:#ffffff;
+			font-size: 14px;
+			font-family: 'Roboto|Taviraj', serif;
 		}
 
 		ul {
@@ -79,120 +89,133 @@
 			margin: 0;
 			padding: 0;
 			margin-left: 0px;
+			padding-top: 30px;
+			padding-bottom: 30px;
 			overflow: hidden;
-			background-color: #E0DCD8;
-		}
+			/*background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));*/
+			background-color: #37474F;
+			box-shadow: 7px 7px 3px #9E9E9E;
+			position: relative;
+			-moz-border-radius: 6px;
+			-webkit-border-radius: 6px;
+			border-radius: 6px;
+			/*background: linear-gradient(#37474F, #263238);*/
+			);
+}
 
-		li {
-			float: left;
-		}
+li {
+	float: left;
+}
 
-		li a {
-			display: block;
-			color: black;
+li a {
+	display: block;
+	font-family: 'Roboto|Taviraj', serif;
+	color: white;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+}
 
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-		}
 
-		a:hover:not(.active) {
-			background-color: #111;
-		}
 
-		.active {
-			background-color:#4CAF50;
-		}
+.active {
+	background-color:#4CAF50;
+}
 
-	</style>
-	<script type="text/javascript" src="options.js"></script> 
-	<link rel="stylesheet" type="text/css" href="options.css">
-	<title></title>
+</style>
+<script type="text/javascript" src="options.js"></script> 
+<link rel="stylesheet" type="text/css" href="options.css">
+<title></title>
 </head>
 <style >
 	body{
-		background: url(bg.jpg);
+		/*background: url(bg.jpg);*/
+		background-color: white;
+	}
+	#focus
+	{
+		width: 300px;
+		height: 40px;
+		background-color: #37474F;
+		text-align: left;
+		margin-bottom: 15px;
+		box-shadow: 0px 0px 0px 0px #9E9E9E;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+		border-radius: 0px;
+	}
+	#hours
+	{
+		margin-bottom:20px;
+	}
+	#siteurl
+	{
+		margin-bottom:15px;
 	}
 </style>
 <body>
-<!-- <button type="button" id="view">View</button>&nbsp; &nbsp;
-<button type="button" id="removeAll">Delete</button>&nbsp; &nbsp;
-<button type="button" id="change">Change</button>&nbsp; &nbsp; -->
-<ul>
-	<li ><b><font size="6", style="font-family:new Comic Sans MS Bold;"><a>FOCUS</a></font></b></li>
-</ul>
-<p id="list"><br></p>
-<div id="edit1">
-	<div id ="edit2">
-		<form>
-			Site name:
-			<input type="text" name="siteurl" id="siteurl"><br><br>
-			Hours:
-			<select id="hours">
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
-				<option value="17">17</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-			</select id="minutes"> &nbsp; &nbsp; &nbsp;
 
-			<!-- <input type="text" name="hour" id="hour"><br>-->
-			Minutes:
-			<!-- <input type="text" name="min" id="min"><br>-->
-			<select id="minutes">
-				<option value="0">0</option>
-				<option value="5">5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="25">25</option>
-				<option value="30">30</option>
-				<option value="35">35</option>
-				<option value="40">40</option>
-				<option value="45">45</option>
-				<option value="50">50</option>
-				<option value="55">55</option>
-				<option value="60">60</option>
-			</select><br><br>
-			<button type="button" id="ok">Ok</button>&nbsp;&nbsp;
-			<button type="button" id="cancel">Cancel</button>
-		</form>
+	<ul>
+		<li ><font size="7", style="color="white";"><a>FOCUS</a></font></li>
+	</ul>
+	<p id="list"><br></p>
+	<div id="edit1">
+		<div id ="edit2">
+			<button id="focus">
+				<b>EDIT INFO</b>
+			</button><br>
+			<form>
+				<b>URL:</b>
+				<input type="text" name="siteurl" id="siteurl"><br>
+				<b>Hours:</b>
+				<select id="hours">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+				</select id="minutes"> &nbsp; &nbsp; &nbsp;
+				<b>Minutes:</b>
+				<select id="minutes">
+					<option value="0">0</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+					<option value="30">30</option>
+					<option value="35">35</option>
+					<option value="40">40</option>
+					<option value="45">45</option>
+					<option value="50">50</option>
+					<option value="55">55</option>
+					<option value="60">60</option>
+				</select><br>
+				<button type="button" id="ok">Ok</button>&nbsp;&nbsp;
+				<button type="button" id="cancel">Cancel</button>
+			</form>
+		</div>
 	</div>
-</div>
-<table id="table">
-  <!--<thead>
-    <tr>
-      <th>Option</th>
-      <th>Time</th>
-      <th>Url</th>
-    </tr>
-</thead>-->
-<!-- <tbody> -->
-   <!-- <tr>
-      <td><strong>showSpeed</strong></td>
-      <td>15</td>
-      <td>The speed of the show/reveal</td>
-  </tr>-->
-  <!-- </tbody> -->
-</table>
+	<table id="table">
+	</table>
 </body>
 </html>
