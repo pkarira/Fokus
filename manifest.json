@@ -1,18 +1,18 @@
 {
   "manifest_version": 2,
 
-  "name": "Focus",
+  "name": "Fokus",
   "description": "This extension will set time limit",
   "version": "1.0",
   "options_page": "options.html",
 
   "browser_action": {
-   "default_icon": "icon.png",
+   "default_icon": "clock.png",
    "default_popup": "popup.html"
   },
   "icons": { 
            // "48": "icon48.png",
-          "128": "icon.png" },
+  "128": "extension_small.png" },
   "background": {
     "scripts": ["dateAndTime.js","background.js"]
   },
