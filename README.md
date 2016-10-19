@@ -13,13 +13,13 @@ and once you close your tab then you will not be able to open it for saved time 
 
 <h3>Usage</h3>
 <b>In the pop box either copy paste the url or go on the which you want to add and click Add This Page button .</b><br><br>
-<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(45).png" width="600"><br><br>
+<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(61).png?raw=true" width="600"><br><br>
 <b>Then select time interval of closing and opening and click on save button .</b><br><br>
-<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(46).png" width="600"><br><br>
+<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(62).png?raw=true" width="600"><br><br>
 <b>Lets suppose you set 45 minutes for facebook and close your facebook's tab . Now if you try to open facebook then you will reach to a screen like:</b><br><br>
-<![gif](https://github.com/pkarira/Focus/blob/master/screenshots/giphy.gif?raw=true)><br><br>
+<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(59).png?raw=true" width="600"><br><br>
 <b>If you want to view/edit/delete saved urls then click on update button in popup box of extension then u will reach to a screen like:</b><br><br>
-<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(51).png" width="600"><br><br>
+<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(60).png?raw=true" width="600"><br><br>
 <b>Now if u want to change time then just click on edit button beside the url to be edited and u will reach here:</b><br><br>
 <img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(52).png" width="600"><br><br>
 <h3>License</h3>
