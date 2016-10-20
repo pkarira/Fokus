@@ -21,7 +21,7 @@ and once you close your tab then you will not be able to open it for saved time 
 <b>If you want to view/edit/delete saved urls then click on update button in popup box of extension then u will reach to a screen like:</b><br><br>
 <img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(60).png?raw=true" width="600"><br><br>
 <b>Now if u want to change time then just click on edit button beside the url to be edited and u will reach here:</b><br><br>
-<img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(52).png" width="600"><br><br>
+<img src="https://github.com/pkarira/Fokus/blob/master/screenshots/Screenshot%20(63).png?raw=true" width="600"><br><br>
 <h3>License</h3>
   
   * [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
