@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Fokus",
-  "description": "This extension will set time limit",
+  "description": "Chrome Extension for blocking website for specified duration between instances of closing and opening ",
   "version": "1.0",
   "options_page": "options.html",
 
@@ -11,7 +11,6 @@
    "default_popup": "popup.html"
   },
   "icons": { 
-           // "48": "icon48.png",
   "128": "extension_small.png" },
   "background": {
     "scripts": ["dateAndTime.js","background.js"]
