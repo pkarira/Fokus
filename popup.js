@@ -1,5 +1,3 @@
-/*document.getElementsByTagName("html")[0].style.width = "300px";
-document.getElementsByTagName("html")[0].style.height = "150px";*/
 document.addEventListener('DOMContentLoaded', function() {
   var saveButton = document.getElementById('save');
   var siteUrl;
@@ -8,28 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
   var d=new Date();
   var optionB=document.getElementById('option');
   chrome.storage.sync.get('myArray', function(data) {
-      if (typeof data.myArray === "undefined") {
-        var a=[];
-         var list=[];
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-        a.push(list);
-        chrome.storage.sync.set({'myArray':a}, function(){
-          
-    });
-}});
+    if (typeof data.myArray === "undefined") {
+      var a=[];
+      var list=[];
+      list.push("");
+      list.push("");
+      list.push("");
+      list.push("");
+      list.push("");
+      list.push("");
+      list.push("");
+      list.push("");
+      a.push(list);
+      chrome.storage.sync.set({'myArray':a}, function(){
+
+      });
+    }});
   var element2 = document.getElementById('minutes');
-        element2.value = 30;
-   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+  element2.value = 30;
+  chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url =tabs[0].url;
     (document.getElementById("siteurl")).setAttribute("value",url+"");
-});
+  });
 
   optionB.addEventListener('click',function()
   {
@@ -47,103 +45,75 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.get('myArray', function(data) {
       if (typeof data.myArray === "undefined") {
         var a=[];
-         var list=[];
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
+        var list=[];
+        list.push("");
+        list.push("");
+        list.push("");
+        list.push("");
+        list.push("");
+        list.push("");
+        list.push("");
+        list.push("");
         a.push(list);
-        chrome.storage.sync.set({'myArray':a}, function(){
-          alert("chrome.storage is now initialized , please click save again");
-    });
+       chrome.storage.sync.set({'myArray':a}, function(){
+        alert("chrome.storage is now initialized , please click save again");
+      });
      }
      if((ValidURL(document.getElementById("siteurl").value.toString()))==true)
-      {
+     {
       var url = new URL(document.getElementById("siteurl").value);
       var domain = url.hostname;
       siteUrl = domain.toString();
       var b=true;
       for (var i=0;i<data.myArray.length;i++)
       {
-      if((data.myArray[i])[0]==="")
-      {
-        data.myArray.splice(i,1);
-         chrome.storage.sync.set({'myArray':data.myArray}, function(){
-    });
+        if((data.myArray[i])[0]==="")
+        {
+          data.myArray.splice(i,1);
+          chrome.storage.sync.set({'myArray':data.myArray}, function(){
+          });
+        }
       }
-     }
       for (var i=0;i<data.myArray.length;i++)
       {
-      if(siteUrl==(data.myArray[i])[0])
-      {
+        if(siteUrl==(data.myArray[i])[0])
+        {
          b=false;
          break;
-      }
+       }
      }
-if(b==true){
-    document.getElementById("list").innerHTML=("saved   "+domain);
-    var list=[];
-    list.push(siteUrl);
-    list.push(hour);
-    list.push(min);
-    list.push(2020);
-    list.push(1);
-    list.push(1);
-    list.push(1);
-    list.push(1);
-    (data.myArray).push(list);
-    chrome.storage.sync.set({'myArray':data.myArray}, function(){
-    });
+     if(b==true){
+      document.getElementById("list").innerHTML=("saved   "+domain);
+      var list=[];
+      list.push(siteUrl);
+      list.push(hour);
+      list.push(min);
+      list.push(2020);
+      list.push(1);
+      list.push(1);
+      list.push(1);
+      list.push(1);
+      (data.myArray).push(list);
+      chrome.storage.sync.set({'myArray':data.myArray}, function(){
+      });
+    }
+    else
+      alert("already saved , please enter another url");
   }
   else
-    alert("already saved , please enter another url");
-}
-else
-{
-  alert("Please enter a valid url");
-}
+  {
+    alert("Please enter a valid url");
+  }
 
-  });
-
-  },false);
-  /*var add=document.getElementById("add");
-  add.addEventListener("click",function () {
-    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-    var url =tabs[0].url;
-    (document.getElementById("siteurl")).setAttribute("value",url+"");
 });
 
-
-
-chrome.storage.sync.get('myArray', function(data) {
-      if (typeof data.myArray === "undefined") {
-        var a=[];
-         var list=[];
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-         list.push("");
-        a.push(list);
-        chrome.storage.sync.set({'myArray':a}, function(){
-          
-    });
-}});
-  });*/
- 
+  },false);
 },false);
 function ValidURL(str) {
   var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
   // var regex=/^((?:(?:(?:\w[\.\-\+]?)*)\w)+)((?:(?:(?:\w[\.\-\+]?){0,62})\w)+)\.(\w{2,6})$/;
   if(!regex .test(str)) {
-  return false;
+    return false;
   } else {
     return true;
   }

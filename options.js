@@ -7,6 +7,15 @@
     var tableBody = document.createElement("tbody");
     for(var i=0;i<data.myArray.length;i++)
     {
+      for (var i=0;i<data.myArray.length;i++)
+      {
+        if((data.myArray[i])[0]==="")
+        {
+          data.myArray.splice(i,1);
+          chrome.storage.sync.set({'myArray':data.myArray}, function(){
+          });
+        }
+      }
       var row = document.createElement("tr");
       row.id=i;
       var td1 = document.createElement("td");
