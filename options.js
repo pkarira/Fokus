@@ -4,10 +4,7 @@
   tableHead.innerHTML = "<tr><th>URL</th><th>TIME</th><th>OPTIONS</th></tr>";
   table.appendChild(tableHead);
   chrome.storage.sync.get('myArray', function(data) {
-    var tableBody = document.createElement("tbody");
-    for(var i=0;i<data.myArray.length;i++)
-    {
-      for (var i=0;i<data.myArray.length;i++)
+    for (var i=0;i<data.myArray.length;i++)
       {
         if((data.myArray[i])[0]==="")
         {
@@ -16,15 +13,17 @@
           });
         }
       }
+    var tableBody = document.createElement("tbody");
+    for(var i=0;i<data.myArray.length;i++)
+    {
       var row = document.createElement("tr");
       row.id=i;
       var td1 = document.createElement("td");
       var td2 = document.createElement("td");
       var td3=document.createElement("td");
       var del = document.createElement("BUTTON");
-      // del.style.background="url  http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444)";
       del.style.background="#37474F";
-      var t = document.createTextNode("Delete");       // Create a text node
+      var t = document.createTextNode("Delete");
       del.appendChild(t);
       var css = 'button del:hover{ background-color: #ffffff }';
       style = document.createElement('style');
