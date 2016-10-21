@@ -1,4 +1,4 @@
-# Focus
+# "FOKUS" Folks!!
 Several times our addiction to social media distracts us from our main aim . People are found spending hours on these websites . This chrome extension has a unique feature which allows user to set interval between closing and opening instances of a particular website . 
 It inhibits from opening same website in a very short intervals and helps in focusing on work . Lets suppose you have a habbit of 
 opening facebook or any other website after every 5-10 minutes then this may help u . Suppose u set time interval of facebook as 1 hour in 
@@ -11,17 +11,19 @@ As mentioned above this extenson allows you set interval of closing and opening 
 indefinitely or allows you set time limit to your usage in a day but this is not a case with this extension , you can spend as much time on website as you want
 and once you close your tab then you will not be able to open it for saved time interval .
 
-<h3>Usage</h3>
+<h3>Usage ( Its quite simple people!! )</h3>
 <b>In the pop box either copy paste the url or go on the which you want to add and click Add This Page button .</b><br><br>
 <img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(61).png?raw=true" width="600"><br><br>
 <b>Then select time interval of closing and opening and click on save button .</b><br><br>
 <img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(62).png?raw=true" width="600"><br><br>
 <b>Lets suppose you set 45 minutes for facebook and close your facebook's tab . Now if you try to open facebook then you will reach to a screen like:</b><br><br>
-![gif](https://github.com/pkarira/Fokus/blob/master/screenshots/one.gif?raw=true)<br><br>
+<img src="https://github.com/pkarira/Fokus/blob/master/screenshots/one.gif?raw=true" width="600"><br><br>
 <b>If you want to view/edit/delete saved urls then click on update button in popup box of extension then u will reach to a screen like:</b><br><br>
 <img src="https://github.com/pkarira/Focus/blob/master/screenshots/Screenshot%20(60).png?raw=true" width="600"><br><br>
 <b>Now if u want to change time then just click on edit button beside the url to be edited and u will reach here:</b><br><br>
 <img src="https://github.com/pkarira/Fokus/blob/master/screenshots/Screenshot%20(63).png?raw=true" width="600"><br><br>
+<h3>"FOKUS" with a "K"</h3>
+Fokus is swedish translation of the word focus which means to concentrate.
 <h3>License</h3>
   
   * [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
