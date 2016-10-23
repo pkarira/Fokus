@@ -3,7 +3,7 @@
 
   "name": "Fokus",
   "description": "Chrome Extension for blocking website for specified duration between instances of closing and opening tab",
-  "version": "1.4",
+  "version": "1.5",
   "options_page": "options.html",
 
   "browser_action": {
