@@ -51,5 +51,5 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
 });
 var tabToUrl = {};
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  
+    tabToUrl[tabId] = tab.url;
 });
