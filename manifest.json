@@ -25,6 +25,8 @@
   "permissions": [
     "tabs",
    "activeTab",
-   "storage"
+   "storage",
+   "contentSettings",
+   "alarms"
    ]
 }
