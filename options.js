@@ -6,7 +6,7 @@
   chrome.storage.sync.get('myArray', function(data) {
     for (var i=0;i<data.myArray.length;i++)
       {
-        if((data.myArray[i])[0]==="")
+        if((data.myArray[i])[0]==="")zccxcxcx
         {
           data.myArray.splice(i,1);
           chrome.storage.sync.set({'myArray':data.myArray}, function(){
