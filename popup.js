@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof data.myArray === "undefined") {
       var a=[];
       var list=[];
-      list.push("");
+      list.push("asdsadsa");
       list.push("");
       list.push("");
       list.push("");
